@@ -3,8 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Macadam Pirate Team - 24h du Mans Roller 2018</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-
+<div class="container">
+    <h1>Tableau des résultats</h1>
+    <table class="striped" id="raw-result">
+        <thead>
+        <tr>
+            <th>Tour</th>
+            <th>Heure</th>
+            <th>Durée</th>
+            <th>Patineur</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script src="data.js"></script>
+<script>
+    let tableBody = $('#raw-result').find('tbody');
+    data.forEach(function (element) {
+        console.log(element);
+        let row = $('<tr><td>' + element.lap + '</td><td>' + element.time + '</td><td>' + element.duration + '</td><td>' + element.skatter + '</td></tr>');
+        tableBody.append(row);
+    });
+</script>
 </body>
 </html>
